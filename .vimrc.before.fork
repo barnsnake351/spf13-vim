@@ -1,0 +1,2 @@
+" Do not automatically change to current directory on file open
+let g:spf13_no_autochdir = 1
