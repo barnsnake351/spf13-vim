@@ -4,3 +4,5 @@ nnoremap <silent> <leader>nb :set relativenumber!<CR>
 " Remap Left/Right to next/previous buffers
 nnoremap <Left> :bp<CR>
 nnoremap <Right> :bn<CR>
+
+set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
