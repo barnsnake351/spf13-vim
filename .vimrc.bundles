@@ -126,6 +126,7 @@
             Bundle 'easymotion/vim-easymotion'
             Bundle 'jistr/vim-nerdtree-tabs'
             Bundle 'flazz/vim-colorschemes'
+            Bundle 'srcery-colors/srcery-vim'
             Bundle 'mbbill/undotree'
             Bundle 'nathanaelkane/vim-indent-guides'
             if !exists('g:spf13_no_views')

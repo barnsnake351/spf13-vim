@@ -177,12 +177,25 @@
 
 " Vim UI {
 
-    if !exists('g:override_spf13_bundles') && filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
-        let g:solarized_termcolors=256
-        let g:solarized_termtrans=1
-        let g:solarized_contrast="normal"
-        let g:solarized_visibility="normal"
-        color solarized             " Load a colorscheme
+    "if !exists('g:override_spf13_bundles') && filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
+        "let g:solarized_termcolors=256
+        "let g:solarized_termtrans=1
+        "let g:solarized_contrast="normal"
+        "let g:solarized_visibility="normal"
+        "color solarized             " Load a colorscheme
+    "endif
+
+    if filereadable(expand("~/.vim/bundle/srcery-vim/colors/srcery.vim"))
+        let g:srcery_bold=1                      " Enable bold text (default-0)
+        let g:srcery_italic=0                    " Enable italic text (default=0)
+        let g:srcery_transparent_background=1    " Remove the background color in terminal (default=0)
+        let g:srcery_underline=1                 " Enables underline text (default=1)
+        let g:srcery_undercurl=1                 " Enables undercurled text (default=1)
+        let g:srcery_inverse=1                   " Enables inverse colors (default=1)
+        let g:srcery_inverse_matches=0           " Enables inverse search matches (default=0)
+        let g:srcery_inverse_match_paren=0       " Inverse matching delimiters (default=0)
+        let g:srcery_dim_lisp_paren=1            " Dim lisp dialects delimiters to a fairly dark gray (default=0)
+        color srcery
     endif
 
     set tabpagemax=15               " Only show 15 tabs
@@ -1052,7 +1065,8 @@
         " Default in terminal vim is 'dark'
         if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
             if !exists('g:airline_theme')
-                let g:airline_theme = 'solarized'
+                "let g:airline_theme = 'solarized'
+                let g:airline_theme = 'srcery'
             endif
             if !exists('g:airline_powerline_fonts')
                 " Use the default set of separators with a few customizations
