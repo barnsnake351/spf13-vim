@@ -6,3 +6,19 @@ nnoremap <Left> :bp<CR>
 nnoremap <Right> :bn<CR>
 
 set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
+" disable current line hilite
+"set nocursorline
+
+" color col 128
+set synmaxcol=128
+set textwidth=78
+if exists('+colorcolumn')
+    "execute "set colorcolumn=" . join(range(81,335), ',')
+    let &colorcolumn="80,".join(range(81,999),",")
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
+" line wraps
+set formatoptions+=t
+set wrap linebreak nolist

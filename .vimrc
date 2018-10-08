@@ -177,23 +177,15 @@
 
 " Vim UI {
 
-    "if !exists('g:override_spf13_bundles') && filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
-        "let g:solarized_termcolors=256
-        "let g:solarized_termtrans=1
-        "let g:solarized_contrast="normal"
-        "let g:solarized_visibility="normal"
-        "color solarized             " Load a colorscheme
-    "endif
-
     if filereadable(expand("~/.vim/bundle/srcery-vim/colors/srcery.vim"))
         let g:srcery_bold=1                      " Enable bold text (default-0)
         let g:srcery_italic=0                    " Enable italic text (default=0)
-        let g:srcery_transparent_background=1    " Remove the background color in terminal (default=0)
+        let g:srcery_transparent_background=0    " Remove the background color in terminal (default=0)
         let g:srcery_underline=1                 " Enables underline text (default=1)
         let g:srcery_undercurl=1                 " Enables undercurled text (default=1)
         let g:srcery_inverse=1                   " Enables inverse colors (default=1)
         let g:srcery_inverse_matches=0           " Enables inverse search matches (default=0)
-        let g:srcery_inverse_match_paren=0       " Inverse matching delimiters (default=0)
+        let g:srcery_inverse_match_paren=1       " Inverse matching delimiters (default=0)
         let g:srcery_dim_lisp_paren=1            " Dim lisp dialects delimiters to a fairly dark gray (default=0)
         color srcery
     endif
@@ -269,7 +261,7 @@
     autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
     "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
-    autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
+    autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
     " preceding line best in a plugin but here for now.
 
     autocmd BufNewFile,BufRead *.coffee set filetype=coffee
